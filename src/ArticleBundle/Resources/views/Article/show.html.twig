@@ -1,0 +1,31 @@
+{# src/ArticleBundle/Resouces/views/Article/show.html.twig #}
+{% extends 'ArticleBundle::layout.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+  <article>
+    <header>
+      <div class="date"><time datetime="{{ article.createdAt|date('c') }}">{{ article.createdAt|date('l, F j, Y') }}</time></div>
+      <h2>{{ article.title }}</h2>
+    </header>
+    <div>
+      <p>{{ article.body }}</p>
+    </div>
+    {% if article.tags is defined %}
+      <span>TAGS:</span>
+      {% for tag in article.tags %}
+        <a href="{{ path('ArticleBundle_tag_show', { 'id': tag.id}) }}">
+          {{ tag }}</a>
+      {% endfor %}
+    {% endif %}
+
+    {% if article.author is defined %}
+      <span>Author: 
+        <a href="{{ path('ArticleBundle_author_show', { 'id': article.author.id}) }}">
+          {{ article.author }}</a>
+      </span>
+    {% endif %}
+  
+  </article>
+{% endblock %}

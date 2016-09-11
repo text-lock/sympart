@@ -1,0 +1,10 @@
+{# src/ArticleBundle/Resouces/views/Author/show.html.twig #}
+{% extends 'ArticleBundle::layout.html.twig' %}
+
+{% block title %}{{ author.name }}{% endblock %}
+
+{% block body %}
+  <h1> Written by: <a href="{{author.name}}">{{author.name}}</a></h1>
+  {% set articles = author.articles %}
+  {{ include('ArticleBundle::articles.html.twig') }}
+{% endblock %}

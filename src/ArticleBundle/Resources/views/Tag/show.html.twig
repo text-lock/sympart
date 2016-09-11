@@ -1,0 +1,10 @@
+{# src/ArticleBundle/Resouces/views/Article/show.html.twig #}
+{% extends 'ArticleBundle::layout.html.twig' %}
+
+{% block title %}{{ tag.title }}{% endblock %}
+
+{% block body %}
+  <h1> Tagged by: {{tag.title}}</h1>
+  {% set articles = tag.articles %}
+  {{ include('ArticleBundle::articles.html.twig') }}
+{% endblock %}

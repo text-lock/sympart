@@ -1,0 +1,9 @@
+{# src/ArticleBundle/Resources/views/Tag/index.html.twig #}
+{% extends 'ArticleBundle::layout.html.twig' %}
+
+{% block body %}
+  <h2>Tags:</h2>
+  {% for tag in tags %}
+    <a href="{{ path('ArticleBundle_tag_show', { 'id': tag.id}) }}">{{ tag.title }}</a> 
+  {% endfor %}
+{% endblock %}

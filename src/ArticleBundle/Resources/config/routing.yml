@@ -5,35 +5,3 @@ Article_homepage:
   requirements:
     methods:  GET
 
-ArticleBundle_article_show:
-  path:  /{id}
-  defaults: { _controller: "ArticleBundle:Article:show" }
-  requirements:
-      methods:  GET
-      id: \d+
-
-ArticleBundle_tag_show:
-  path:  /tag/{id}
-  defaults: { _controller: "ArticleBundle:Tag:show" }
-  requirements:
-      methods:  GET
-      id: \d+
-
-ArticleBundle_tag_list:
-  path:  /tag/
-  defaults: { _controller: "ArticleBundle:Tag:index" }
-  requirements:
-      methods:  GET
-
-ArticleBundle_author_show:
-  path:  /author/{id}
-  defaults: { _controller: "ArticleBundle:Author:show" }
-  requirements:
-      methods:  GET
-      id: \d+
-
-ArticleBundle_author_list:
-  path:  /author/
-  defaults: { _controller: "ArticleBundle:Author:index" }
-  requirements:
-      methods:  GET

@@ -50,6 +50,15 @@ abstract class Article
         $this->setUpdatedAt(new \DateTime());   
     }
 
+     /**
+    * Convert entity to string
+    */
+    public function __toString()
+    {
+      return $this->getTitle();
+    }
+
+
     /**
      * Get id
      *

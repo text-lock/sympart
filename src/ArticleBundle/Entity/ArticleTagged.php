@@ -3,6 +3,7 @@
 namespace ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -12,6 +13,12 @@ class ArticleTagged extends Article
     /**
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="articles")
      * @ORM\JoinTable(name="articles_tags",)
+     * @Assert\Count(
+     *      min = "1",
+     *      max = "3",
+     *      minMessage = "You must specify at least one tag",
+     *      maxMessage = "You cannot specify more than {{ limit }} tags"
+     * )
      */
     private $tags;
 

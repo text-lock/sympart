@@ -2,5 +2,10 @@
 {% extends 'ArticleBundle::layout.html.twig' %}
 
 {% block body %}
+  New article:
+  <a href="{{ path('authored_new')}}"><b>by author</b></a> |
+  <a href="{{ path('tagged_new')}}"><b>by tag</b></a>
   {{ include('ArticleBundle::articles.html.twig') }}
+
+                            
 {% endblock %}

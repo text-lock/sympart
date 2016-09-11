@@ -2,8 +2,16 @@
 {% extends 'ArticleBundle::layout.html.twig' %}
 
 {% block body %}
+<a href="{{ path('author_new')}}">new author</a>
   <h2>Authors: </h2>
   {% for author in authors %}
-    <p><a href="{{ path('ArticleBundle_author_show', { 'id': author.id}) }}">{{author.name }}</a> (url: {{author.url}})</p>
+    <p><a href="{{ path('author_show', { 'id': author.id}) }}">{{author.name }}</a> (url: {{author.url}})
+        <small><a href="{{ path('author_edit', { 'id': author.id}) }}">edit</a> | 
+        <a href="{{ path('author_delete', { 'id': author.id}) }}">delete</a> 
+        </small>
+    </p>
   {% endfor %}
 {% endblock %}
+
+
+    

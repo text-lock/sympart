@@ -3,10 +3,16 @@
 namespace ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="tag")
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     errorPath="tag",
+ *     message="This tag is already in database."
+ * )
 */
  
 class Tag

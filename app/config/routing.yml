@@ -1,3 +1,23 @@
+article_article_authored:
+    resource: "@ArticleBundle/Controller/ArticleAuthoredController.php"
+    type:     annotation
+
+article_article_tagged:
+    resource: "@ArticleBundle/Controller/ArticleTaggedController.php"
+    type:     annotation
+
+article_article:
+    resource: "@ArticleBundle/Controller/ArticleController.php"
+    type:     annotation
+
+article_tag:
+    resource: "@ArticleBundle/Controller/TagController.php"
+    type:     annotation
+
+article_author:
+    resource: "@ArticleBundle/Controller/AuthorController.php"
+    type:     annotation
+
 article:
     resource: "@ArticleBundle/Resources/config/routing.yml"
     prefix:   /

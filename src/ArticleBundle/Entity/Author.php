@@ -3,10 +3,16 @@
 namespace ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="author")
+ * @UniqueEntity(
+ *     fields={"name"},
+ *     errorPath="athor",
+ *     message="This author is already in database."
+ * )
 */
  
 class Author

@@ -2,8 +2,14 @@
 {% extends 'ArticleBundle::layout.html.twig' %}
 
 {% block body %}
+<a href="{{ path('tag_new')}}">new tag</a>
   <h2>Tags:</h2>
+
   {% for tag in tags %}
-    <a href="{{ path('ArticleBundle_tag_show', { 'id': tag.id}) }}">{{ tag.title }}</a> 
+    <p><a href="{{ path('tag_show', { 'id': tag.id}) }}"><b>{{ tag.title }}</b></a> 
+    <small><a href="{{ path('tag_edit', { 'id': tag.id}) }}">edit</a> | 
+    <a href="{{ path('tag_delete', { 'id': tag.id}) }}">delete</a> 
+    </small>
+    </p>
   {% endfor %}
 {% endblock %}

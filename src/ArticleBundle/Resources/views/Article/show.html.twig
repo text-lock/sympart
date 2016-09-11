@@ -15,14 +15,14 @@
     {% if article.tags is defined %}
       <span>TAGS:</span>
       {% for tag in article.tags %}
-        <a href="{{ path('ArticleBundle_tag_show', { 'id': tag.id}) }}">
+        <a href="{{ path('tag_show', { 'id': tag.id}) }}">
           {{ tag }}</a>
       {% endfor %}
     {% endif %}
 
     {% if article.author is defined %}
       <span>Author: 
-        <a href="{{ path('ArticleBundle_author_show', { 'id': article.author.id}) }}">
+        <a href="{{ path('author_show', { 'id': article.author.id}) }}">
           {{ article.author }}</a>
       </span>
     {% endif %}

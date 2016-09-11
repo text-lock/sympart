@@ -1,9 +1,20 @@
 {# src/ArticleBundle/Resources/views/articles.html.twig #}
 {% for article in articles %}
-  <article>
-      <b><a href="{{ path('ArticleBundle_article_show', { 'id': article.id}) }}">
-          {{ article.title }}</a>
-      </b> <small> (posted at: <time datetime="{{ article.createdAt|date('c') }}">{{ article.createdAt|date('l, F j, Y') }}</time>)</small>
-      <hr>
+    <article>
+    <b><a href="{{ path('article_show', { 'id': article.id}) }}">
+        {{ article.title }}</a>
+    </b> <small> (posted at: <time datetime="{{ article.createdAt|date('c') }}">{{ article.createdAt|date('l, F j, Y') }}</time>)</small>
+
+    {% if article.author is defined %}
+        <a href="{{ path('authored_edit', { 'id': article.id}) }}">
+    {% elseif article.tags is defined %}
+        <a href="{{ path('tagged_edit', { 'id': article.id}) }}">
+    {% endif %}
+    edit</a> | 
+    <a href="{{ path('article_delete', { 'id': article.id}) }}">delete</a>
+ 
+    <hr>
   </article>
 {% endfor %}
+
+
